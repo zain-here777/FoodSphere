@@ -1,0 +1,313 @@
+// Variables //
+
+$brown: #C07629;
+$orange: #F38F2B;
+
+// Fonts //
+
+@font-face {
+  font-family: 'Athelas-Regular';
+  src: url("/assets/fonts/Athelas-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Athelas-Bold';
+  src: url("/assets/fonts/Athelas-Bold.ttf");
+}
+
+// CSS //
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Athelas-Regular', serif;
+}
+
+
+.fs-main {
+  background-image: url("../images/pg-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.fs-navbar {
+  padding: 20px 50px;
+
+  img {
+    max-width: 220px;
+  }
+}
+
+.fs-inpage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 180px;
+    color: white;
+    text-align: center;
+  }
+}
+
+.fs-signup-btn {
+  background-color: $brown;
+  padding: 18px 20px 18px 20px;
+  max-width: 100%;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+
+  &:hover {
+    background-color: $brown;
+  }
+}
+
+.fs-footer {
+  padding: 20px 50px;
+  color: white;
+
+  img {
+    max-width: 60px;
+  }
+
+  .fs-footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .fs-footer-left {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+
+    h5, p {
+      font-size: 36px;
+    }
+
+    p {
+      font-weight: lighter;
+      color: #ffffff96;
+    }
+  }
+
+  .fs-footer-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.fs-signup-modal {
+  .modal-header {
+    border-bottom: none;
+
+    button {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .fs-close-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #8B8B8B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .modal-body {
+    padding-inline: 125px;
+    text-align: center;
+
+    & > * {
+      font-size: 25px;
+      margin-block-end: 50px;
+      font-weight: 600;
+    }
+  }
+}
+
+.fs-signup-form {
+  & > *:not(:last-child) {
+    margin-block-end: 50px;
+  }
+
+  input {
+    font-size: 34px;
+    background-image: url("../images/mailicon.png");
+    background-size: 45px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 70px;
+  }
+
+  button {
+    background-color: $orange;
+    width: 100%;
+    color: white;
+    font-size: 34px;
+
+    &:hover {
+      background-color: $orange;
+    }
+
+    &:active {
+      border-color: transparent !important;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .fs-navbar {
+    img {
+      max-width: 155px;
+    }
+  }
+  .fs-inpage {
+    h1 {
+      font-size: 120px;
+    }
+  }
+  .fs-signup-btn {
+    font-size: 30px;
+  }
+  .fs-footer {
+    .fs-footer-left {
+      h5 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 22px;
+      }
+    }
+  }
+  .fs-signup-modal {
+    .modal-body {
+      padding-inline: 30px;
+
+      & > * {
+        margin-block-end: 35px;
+        font-size: 20px;
+      }
+
+      img {
+        max-width: 220px;
+      }
+    }
+  }
+  .fs-signup-modal {
+    .fs-close-btn {
+      width: 35px;
+      height: 35px;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .fs-signup-form > *:not(:last-child) {
+    margin-block-end: 35px;
+    font-size: 20px;
+  }
+  .fs-signup-form {
+    input {
+      padding-left: 55px;
+      background-size: 30px;
+    }
+
+    button {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .fs-navbar {
+    padding: 5px;
+
+    img {
+      max-width: 110px;
+    }
+  }
+  .fs-inpage {
+    h1 {
+      font-size: 65px;
+    }
+  }
+  .fs-signup-btn {
+    font-size: 18px;
+    padding: 12px 16px 12px 16px;
+  }
+  .fs-footer {
+    .fs-footer-left {
+      gap: 20px;
+
+      h5 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+  .fs-footer-content {
+    & > * {
+      flex-grow: 1;
+      flex-basis: 100%;
+    }
+
+    .fs-footer-left {
+      & > * {
+        flex: 1;
+      }
+
+      div:nth-child(2) {
+        text-align: right;
+      }
+    }
+  }
+  .fs-footer-right {
+    div:nth-child(1) {
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .fs-inpage {
+    h1 {
+      font-size: 55px;
+    }
+  }
+  .fs-footer {
+    .fs-footer-left {
+      h5, p {
+        font-size: 16px;
+      }
+    }
+  }
+}
